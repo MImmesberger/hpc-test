@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hpc-test"
+version = "0.1.0"
+description = "Test project for pytask-slurm on HPC clusters."
+requires-python = ">=3.14"
+dependencies = ["numpy", "pandas", "pytask>=0.5.2", "pytask-slurm"]
+
+[tool.hatch.build.targets.wheel]
+only-include = ["src"]
+sources = ["src"]
+
+# ── pytask SLURM defaults (applied when --slurm is passed) ─────
+[tool.pytask.ini_options]
+slurm_time = "00:10:00"
+slurm_mem = "2G"
+slurm_cpus_per_task = 1
+slurm_account = "ag_iame_gaudecker"
+
+# ── Ruff ────────────────────────────────────────────────────────
+[tool.ruff]
+target-version = "py314"
+fix = true
