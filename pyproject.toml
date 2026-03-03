@@ -19,6 +19,7 @@ slurm_time = "00:10:00"
 slurm_mem = "2G"
 slurm_cpus_per_task = 1
 slurm_account = "ag_iame_gaudecker"
+slurm_extra = "--mail-user=immesberger@uni-bonn.de --mail-type=ALL"
 
 # ── Ruff ────────────────────────────────────────────────────────
 [tool.ruff]
